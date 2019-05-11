@@ -14,7 +14,7 @@ const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
 module.exports = function (variants) {
-    return function ({ addUtilities }) {
+    return function ({ addUtilities, variants }) {
 
         addUtilities({
             '.animated': {
@@ -345,6 +345,6 @@ module.exports = function (variants) {
             '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
             '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
             '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
-        }, variants)
+        }, variants(variants))
     };
 };
